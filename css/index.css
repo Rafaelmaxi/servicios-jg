@@ -368,6 +368,28 @@ nav ul li a:hover{
 .descripcion{
     background: #fff;
     width: 100%;
-    height: 60px;
+    height: 100%;
     margin-top: 20px;
+    background: var(--bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cont-desc{
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.desc-txt{
+    flex: 1;
+    padding: 0 10px;
+    width: 50%;
+}
+
+.desc-img{
+    width: 50%;
+    flex: 1;
+}
+.desc-img img{
+    width: 100%;
 }
