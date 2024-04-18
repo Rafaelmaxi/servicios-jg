@@ -352,6 +352,11 @@ nav ul li a:hover{
     color: white;
     font-size: 20px;
 }
+.cont-plus a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
 .desc-title{
     margin-top: 30px;
     width: 100%;
@@ -374,6 +379,7 @@ nav ul li a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .cont-desc{
     display: flex;
@@ -384,12 +390,69 @@ nav ul li a:hover{
     flex: 1;
     padding: 0 10px;
     width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .desc-img{
     width: 50%;
     flex: 1;
+    height: 100%;
 }
 .desc-img img{
     width: 100%;
+    height: 100%;
 }
+.cotizacion{
+    width: 100%;
+    height: 50px;
+    background: var(--botones);
+    margin-top: 15px;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.cotizacion a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+.cotizacion:hover{
+    background: var(--hover);
+    transition: .5s ease-in;    
+}
+.contact-num{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+.contact-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.contact-txt .claro{
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
+}
+.contact-txt .opaco{
+    color: #4f4f4f;
+}
+.contact-txt h1,
+.contact-txt h1 i
+{
+    font-size: 40px;
+    color: black;
+}
+
