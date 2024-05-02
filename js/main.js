@@ -1,18 +1,15 @@
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener("DOMContentLoaded", function() {
+    var navCheck = document.getElementById('nav_check');
+    var body = document.body;
 
-    const switcherTheme=document.querySelector('.check');
-    const root=document.documentElement;
-
-    if(root.getAttribute('data-tema')==='dark'){
-        switcherTheme.checked=true;
-    }
-
-    switcherTheme.addEventListener('click',toggleTheme);
-
-    function toggleTheme(){
-        const setTheme=switcherTheme.checked? 'dark' : 'light';
-
-        root.setAttribute('data-tema', setTheme);
-        localStorage.setItem('tema',setTheme);
-    }
+    // Agrega evento click al botón de menú
+    navCheck.addEventListener('click', function() {
+        if (navCheck.checked) {
+            // Si el menú está abierto, bloquea el desplazamiento de la página
+            body.style.overflow = 'hidden';
+        } else {
+            // Si el menú está cerrado, permite el desplazamiento de la página
+            body.style.overflow = 'auto';
+        }
+    });
 });
