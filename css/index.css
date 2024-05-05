@@ -27,6 +27,11 @@ body{
 }
 
 /*HEADER*/
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
 .sub-header{
     display: flex;
     justify-content: space-around;
@@ -64,10 +69,14 @@ body{
 }
 
 .secciones{
-    height: 90px;
-    background: var(--principal);
+    height: 4.5rem;
     display: flex;
     justify-content: center;
+    background-color: transparent;
+}
+.scroll-color{
+    background: var(--principal);
+    transition: all 0.5s ease-in;
 }
 .row{
     display: flex;
@@ -78,9 +87,10 @@ body{
 }
 .logo{
     display: flex;
+    height: 4.5rem;
 }
 .logo img{
-    width: 80px;
+    width: 100%;
     height: auto;
 }
 .col-seccion{
@@ -94,15 +104,33 @@ body{
     list-style: none;
 }
 .col-seccion ul li a{
+    position: relative;
     text-decoration: none;
     font-size: 20px;
     color: white;
     font-weight: 500;
     text-transform: uppercase;
 }
-.col-seccion ul li a:hover{
-    color: black;
-    transition: all 0.5s ease-in-out;
+/*.col-seccion .menu .rep a::before{
+    content: '';
+    position: absolute;
+    
+    bottom: 0;
+    transform: translateY(50%);
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all .5s ease;
+    border-radius: 10px;
+}
+.col-seccion .menu .rep:hover a::before{
+    opacity: 1;
+    background-color: black;
+}*/
+.col-seccion .menu .rep a:hover{
+    color: yellow;
+    transition: all 0.5s ease-in;
 }
 
 /* Teléfonos */
@@ -245,17 +273,19 @@ nav ul li a:hover{
     z-index: 999;
     background: var(--principal);
     width: 7rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     border-radius: 10px;
+    
 }
 .col-seccion .menu li ul li a{
     color: white;
     padding-left: 1rem;
     font-size: 16px;
 }
+
 .col-seccion .menu li ul li a:hover{
     color: black;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in;
 }
 .col-seccion .menu li:hover ul {
     opacity: 1;
@@ -321,12 +351,12 @@ nav ul li a:hover{
     padding: 0 20px; /* Agrega un relleno horizontal para el texto */
 }
 .text-banner h3{
-    font-size: 6rem;
+    font-size: 4rem;
     text-transform: uppercase;
     color: yellow;
 }
 .text-banner p{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--principal);
 }
 @keyframes vibrar {
@@ -355,6 +385,7 @@ nav ul li a:hover{
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), /* Aumenta la sombra cuando se pasa el cursor */
                 0px 0px 20px rgba(255, 255, 255, 0.7);
     animation: none;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 575px) {
@@ -571,15 +602,38 @@ nav ul li a:hover{
     width: 80%;
 }
 .desc-txt{
+    position: relative;
     flex: 1;
-    padding: 0 10px;
+    padding: 2rem;
     width: 50%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    background: white;
+    margin-left: 1rem;
+    text-align: justify;
+    left: -5%;
 }
-
+.desc-txt h1{
+    font-size: 2rem;
+    font-weight: 7  00;
+    text-transform: uppercase;
+}
+.desc-txt h1::before{
+    content: '';
+    width: 40px;
+    height: 7px;
+    background-color: var(--principal);
+    border-radius: 10px;
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    margin-top: 5px;
+}
+.desc-txt p{
+    margin-top: 10px;
+}
 .desc-img{
     width: 50%;
     flex: 1;
@@ -609,6 +663,58 @@ nav ul li a:hover{
 .cotizacion:hover{
     background: var(--hover);
     transition: .5s ease-in;    
+}
+@media only screen and (max-width: 575px){
+    .descripcion{
+        display: block;
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .cont-desc{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        top: 0;
+        
+    }
+    .desc-img{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: flex;
+        justify-content: centers;
+    }
+    .desc-img img{
+        width: 100%;
+        
+    }
+    .desc-txt{
+        position: relative;
+        min-width: 100%;
+        margin: 0;
+        left: 0;
+    }
+    .desc-txt h1::before{
+        top: 4.5rem;
+        width: 50px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .desc-img img{
+        object-fit: cover;
+    }
+    .cont-desc{
+        width: 100%;
+
+    }
+    .desc-txt{
+        left: 0;
+        margin-left: 0;
+    }
 }
 
 /*FIN DESCRIPCION*/

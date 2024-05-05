@@ -13,3 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+window.addEventListener("scroll", function(){
+    var header = document.getElementById("scrollId");
+    if(window.scrollY > 0){
+        header.classList.add("scroll-color");
+    }else{
+        header.classList.remove("scroll-color");
+    }
+});
